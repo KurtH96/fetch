@@ -3,10 +3,12 @@ package harrison.kurt.exercise.fetch.listitem.persistence
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
+import kotlinx.serialization.Serializable
 
 /**
  * Definition of list item entities. List items are stored in a table named "list_item".
  */
+@Serializable
 @Entity(tableName = "list_item")
 data class ListItemEntity(
     @PrimaryKey val id: Int,
