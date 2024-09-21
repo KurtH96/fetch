@@ -11,6 +11,9 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.room.Room
+import harrison.kurt.exercise.fetch.listitem.persistence.ListItemDatabase
+import harrison.kurt.exercise.fetch.listitem.persistence.ListItemEntity
 import harrison.kurt.exercise.fetch.ui.theme.FetchTheme
 
 class MainActivity : ComponentActivity() {
@@ -27,6 +30,23 @@ class MainActivity : ComponentActivity() {
                 }
             }
         }
+        dbTest()
+    }
+
+    /**
+     * Test showing basic setup
+     */
+    private fun dbTest() {
+        Thread {
+            val db = Room.databaseBuilder(
+                applicationContext,
+                ListItemDatabase::class.java,
+                "list-items-db"
+            ).build()
+            val dao = db.listItemDao()
+            val entity = ListItemEntity(0,0, "foo")
+            dao.insertAll(entity)
+        }.start()
     }
 }
 
