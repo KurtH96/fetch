@@ -1,1 +1,4 @@
 *.bak
+.gradle/*
+.idea/*
+local.properties
