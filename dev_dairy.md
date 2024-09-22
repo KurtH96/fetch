@@ -60,4 +60,9 @@ need to be query. KotlinX Serialization is the de facto serialization library
 for Kotlin. This library converts JSON strings to Kotlin data classes, and the
 data can be converted to the very same data class required for defining Room
 entities.  
+
+## User Interface
+No design specification is given, so a very basic theme and layout is used. The
+layout consists of a title and table of items. The user interface is implemented
+with the Jetpack Compose framework.
   
