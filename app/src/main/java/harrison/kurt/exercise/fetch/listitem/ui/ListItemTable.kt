@@ -12,10 +12,11 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
+import harrison.kurt.exercise.fetch.listitem.persistence.ListItemEntity
 
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
-fun ListItemTable() {
+fun ListItemTable(listItems: List<ListItemEntity>) {
     LazyColumn(
         modifier = Modifier
             .fillMaxWidth()
@@ -26,15 +27,8 @@ fun ListItemTable() {
         verticalArrangement = Arrangement.spacedBy(2.dp),
     ) {
         stickyHeader { ListItemRow("ID", "List", "Name") }
-        item { ListItemRow("0", "0",  "foo") }
-        item { ListItemRow("0", "0",  "foo") }
-        item { ListItemRow("0", "0",  "foo") }
-        item { ListItemRow("0", "0",  "foo") }
-        item { ListItemRow("0", "0",  "foo") }
-        item { ListItemRow("0", "0",  "foo") }
-        item { ListItemRow("0", "0",  "foo") }
-        item { ListItemRow("0", "0",  "foo") }
-        item { ListItemRow("0", "0",  "foo") }
-        item { ListItemRow("0", "0",  "foo") }
+        listItems.forEach { item ->
+           item{ ListItemRow(item.id.toString(), item.listId.toString(), item.name.toString()) }
+        }
     }
 }
