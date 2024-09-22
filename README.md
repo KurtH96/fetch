@@ -1,6 +1,7 @@
 # Fetch Rewards Coding Exercise  
 This repository contains an implementation of a native Android application as
-specified by given requirements.  
+specified by given requirements. For a record of rational and activities, 
+please see the [developer diary](dev_dairy.md) file.
   
 ## Description  
 Within this repository is a native Android application that adheres to the
