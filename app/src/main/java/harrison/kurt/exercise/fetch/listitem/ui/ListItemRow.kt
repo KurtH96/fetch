@@ -12,12 +12,11 @@ import androidx.compose.ui.unit.sp
 
 
 @Composable
-fun ListItemRow(id: String, list: String, name: String) {
+fun ListItemRow(id: String, name: String) {
     Row(
         modifier = Modifier.fillMaxSize()
     ) {
         Text(text = id, modifier = Modifier.width(128.dp), fontSize = 24.sp)
-        Text(text = list, modifier = Modifier.width(128.dp), fontSize = 24.sp)
         Text(text = name, modifier = Modifier.fillMaxWidth(), fontSize = 24.sp)
     }
 }
