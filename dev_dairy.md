@@ -66,3 +66,16 @@ No design specification is given, so a very basic theme and layout is used. The
 layout consists of a title and table of items. The user interface is implemented
 with the Jetpack Compose framework.
   
+## Final Thoughts  
+Implementing the grouping and sort of list items turned out to be trivial. Due
+to the triviality of sorting and groupt list items, unit tests are not
+implemented. The requirement of sorting items by name is not entirely clear
+because every list item follow the pattern "Item ###" where ### is the ID value.
+Currently, the list is shorted by ID to avoid ordering such as: "Item 1",
+"Item 123", and "Item 19". If names are not predictable, then a new sorting
+algorithm will need to be implemented.
+
+The list of items are display in order and separated by headers with the item's
+corresponding list ID. Only the ID and name of list items are displayed as the
+list ID is displayed in each header. In the future, the user interface could be
+more friendly by implementing collapsable lists.
